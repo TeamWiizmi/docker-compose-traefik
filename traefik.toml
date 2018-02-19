@@ -1,0 +1,23 @@
+[web]
+address = ":8080"
+[web.auth.basic]
+users = ["test:$2y$10$TNl70Hci7uxXK9PTaEWq4OtsNJFvQQkXjm6nmp8ka2k0e4mwJyUva"]
+
+[docker]
+watch = true
+
+[acme]
+email = "example@example.com"
+storage = "acme.json"
+entryPoint = "https"
+OnHostRule = true
+
+[acme.httpChallenge]
+entryPoint = "http"
+
+[[acme.domains]]
+  main = "example.com"
+  sans = ["sub-domain-a.example.com", "sub-domain-b.example.com"]
+
+[[acme.domains]]
+  main = "example-b.com"
